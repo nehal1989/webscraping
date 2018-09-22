@@ -1,6 +1,7 @@
 import requests
 import bs4
 from collections import namedtuple
+import database_api
 
 URL = "https://www.stuffyoushouldknow.com/podcasts/sysk-archive.htm"
 
@@ -31,3 +32,5 @@ def scrape_site(site):
 if __name__ == '__main__':
     site = pull_website(URL)
     podcast_data = scrape_site(site)
+    database_api.initialiase_database()
+    database_api.add_data(podcast_data)
