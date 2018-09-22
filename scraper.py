@@ -23,7 +23,8 @@ def scrape_site(site):
     for idx, txt in enumerate(new_list,1):
         print(f"{idx}. {txt}")
 
+    return new_list
 
 if __name__ == '__main__':
     site = pull_website(URL)
-    scrape_site(site)
+    podcast_data = scrape_site(site)
